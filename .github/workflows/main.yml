@@ -1,4 +1,4 @@
-name: Fetch and Push PKC Honeypot logs
+name: Fetch and Push, Honeypot logs
 
 on:
   schedule:
@@ -15,11 +15,11 @@ jobs:
 
     - name: Download 14-day log file
       run: |
-        curl -o IOCs/network-indicators/honeypot/iocs-14d.csv https://honey.pkc.supreme.sh/pkc/ssh/logs/honey-14d.log
+        curl -o honeypot/ssh/iocs-14d.csv https://honey.pkc.supreme.sh/pkc/ssh/logs/honey-14d.log
 
     - name: Download 30-day log file
       run: |
-        curl -o IOCs/network-indicators/honeypot/iocs-30d.csv https://honey.pkc.supreme.sh/pkc/ssh/logs/honey-30d.log
+        curl -o honeypot/ssh/iocs-30d.csv https://honey.pkc.supreme.sh/pkc/ssh/logs/honey-30d.log
 
     - name: Commit and push if there are changes
       run: |
